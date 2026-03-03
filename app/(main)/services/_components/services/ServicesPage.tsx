@@ -1,6 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import { ServiceCard } from "./ServiceCard";
+import img1 from "@/public/newImg/service/img1.jpg"
+import img2 from "@/public/newImg/service/img2.jpg"
+import img3 from "@/public/newImg/service/img3.jpg"
+import Image from "next/image";
 
 export default function ServicesPage() {
   const services = [
@@ -40,10 +44,10 @@ export default function ServicesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white px-6 py-20 md:py-32">
-      <div className="max-w-7xl mx-auto">
+    <main className="min-h-screen bg-white  py-20 md:py-32">
+      <div className="flex flex-col gap-12">
         {/* Header Section */}
-        <section className="mb-24">
+        <section className="mb-24 max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -65,7 +69,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-[56px] md:text-[72px] font-bold text-[#0F172A] leading-[1.1] tracking-tight mb-8"
           >
-            Services
+            Frontier Talent Solutions
           </motion.h1>
 
           <motion.p
@@ -79,8 +83,16 @@ export default function ServicesPage() {
           </motion.p>
         </section>
 
+        <section className="">
+          <div className="grid grid-cols-3 ">
+            <Image src={img2} alt="img" className="h-96 object-cover" />
+            <Image src={img3} alt="img" className=" h-96 object-cover" />
+            <Image src={img1} alt="img" className="h-96   object-cover" />
+          </div>
+        </section>
+
         {/* Middle Section */}
-        <section className="mb-20">
+        <section className="mb-20 max-w-7xl mx-auto px-6">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,11 +112,13 @@ export default function ServicesPage() {
         </section>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          {services.map((service, idx) => (
-            <ServiceCard key={idx} {...service} delay={0.1 * idx} />
-          ))}
-        </div>
+        <section className="mb-20 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            {services.map((service, idx) => (
+              <ServiceCard key={idx} {...service} delay={0.1 * idx} />
+            ))}
+          </div>
+        </section>
       </div>
     </main>
   );

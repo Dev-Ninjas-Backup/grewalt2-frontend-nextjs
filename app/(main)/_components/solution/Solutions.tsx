@@ -24,7 +24,7 @@ const Solutions = () => {
       delay: 0,
     },
     {
-      title: "Specialist Squads",
+      title: "Specialist Teams",
       description:
         "Need a complete KYC team? DeFi protocol squad? We build and deliver ready-to-deploy specialist teams in 30-60 days.",
       points: [

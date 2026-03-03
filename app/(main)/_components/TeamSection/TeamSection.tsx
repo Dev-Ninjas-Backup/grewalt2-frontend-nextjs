@@ -4,10 +4,10 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css"; // AOS CSS ইমপোর্ট করতে ভুলবেন না
 import TeamCard from "./TeamCard";
-import img1 from "@/public/teamSection/img1.png";
-import img2 from "@/public/teamSection/img2.png";
-import img3 from "@/public/teamSection/img3.png";
-import img4 from "@/public/teamSection/img4.png";
+import img4 from "@/public/newImg/img1.jpg";
+import img1 from "@/public/newImg/img2.jpg";
+import img3 from "@/public/newImg/img3.jpg";
+import img2 from "@/public/newImg/img4.jpg";
 import bgImg from "@/public/teamSection/Svg file 2.svg";
 
 const TeamSection = () => {
@@ -21,10 +21,18 @@ const TeamSection = () => {
   }, []);
 
   const team = [
-    { name: "Maria Johnson", role: "Senior Executive", image: img1 },
-    { name: "John Doe", role: "Senior Executive", image: img2 },
-    { name: "Marla Gabriel", role: "Senior Executive", image: img3 },
-    { name: "Maria Gabriel", role: "Senior Executive", image: img4 },
+    {
+      name: "Terath Grewal",
+      role: " Co-Founder/Managing Partner",
+      image: img1,
+    },
+    { name: "Manj Singh", role: "Co-Founder, Network Strategy", image: img2 },
+    { name: "Zhang Wei", role: "Web3 Ecosystem Lead", image: img3 },
+    {
+      name: "Sam Hirsch",
+      role: "Blockchain Infrastructure Specialist",
+      image: img4,
+    },
   ];
 
   return (
@@ -46,8 +54,8 @@ const TeamSection = () => {
                 Industries We Serve
               </p>
             </div>
-            <h2 className="font-bomstad text-[48px] md:text-[60px] font-bold text-white leading-[1.1]">
-              The Minds Behind the Mission
+            <h2 className="font-bomstad  text-[42px] md:text-[50px] font-bold text-white">
+              The Leadership Team
             </h2>
           </div>
 
