@@ -97,7 +97,8 @@ const HomeBanner = () => {
           className="text-6xl md:text-[80px] font-bold text-[#05183D]  mb-8  pointer-events-auto"
           style={{ fontFamily: "var(--font-bomstad), sans-serif" }}
         >
-          Build World-Class AI & <br /> Blockchain Teams. Faster.
+          Build world-class AI
+          <br /> blockchain teams faster
         </h1>
 
         {/* Subtext - */}
@@ -106,8 +107,8 @@ const HomeBanner = () => {
           data-aos-delay="200"
           className="text-slate-500 text-lg md:text-[22px] max-w-3xl mx-auto mb-14 leading-relaxed font-medium pointer-events-auto"
         >
-          The only recruitment and advisory firm that speaks AI, blockchain, and
-          banking fluently. Pre-vetted talent that ships from day one.
+          The only recruitment and advisory firm that speaks AI, blockchain,
+          Crypto and web3 fluently. Pre-vetted talent that ships from day one.
         </p>
 
         {/* CTAs */}
