@@ -62,8 +62,8 @@ const TeamSection = () => {
           {/* Subtext and Button Animation */}
           <div data-aos="fade-left" className="max-w-md">
             <p className="text-slate-300 text-[16px] mb-8 leading-relaxed">
-              A specialized collective of industry veterans, talent strategists,
-              and tech enthusiasts dedicated to scaling the decentralized world.
+              Operators, strategists, and talent specialists scaling AI, Web3,
+              and decentralized innovation
             </p>
             <button className="border border-[#6FDEF7]/30 cursor-pointer text-white px-8 py-3 rounded-xl hover:bg-[#6FDEF7] hover:text-[#05183D] transition-all duration-300 font-bold shadow-lg hover:shadow-[#6FDEF7]/20">
               Let&apos;s Collaborate
