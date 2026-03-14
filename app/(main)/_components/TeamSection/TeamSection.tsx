@@ -98,6 +98,8 @@ const TeamSection = () => {
               name={member.name}
               role={member.role}
               image={member.image}
+              // imageClassName={member.imageClassName}
+              isCEO={member.name === "Terath Grewal"}
             />
           ))}
         </div>

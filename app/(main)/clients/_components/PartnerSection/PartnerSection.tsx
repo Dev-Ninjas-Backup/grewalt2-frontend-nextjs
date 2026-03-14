@@ -2,11 +2,11 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { motion } from "framer-motion";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-// Your specific image imports
+import { PartnerCard } from "./PartnerCard";
+
+// Images
 import imgAI from "@/public/service/scope.jpg";
 import imgWeb3 from "@/public/clients/protocol.jpg";
 import imgGTM from "@/public/clients/industry.jpg";
@@ -24,7 +24,7 @@ export default function PartnerSection() {
     });
   }, []);
 
-  const gridPartners = [
+  const partners = [
     {
       title: "Implementation partners",
       description:
@@ -58,7 +58,7 @@ export default function PartnerSection() {
   return (
     <section className="bg-[#FDFDFD] py-32 px-6 md:px-12 overflow-hidden border-t border-slate-100">
       <div className="max-w-7xl mx-auto">
-        {/* Modern Header Section */}
+        {/* Header */}
         <header className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
           <div className="max-w-2xl" data-aos="fade-right">
             <div className="flex items-center gap-3 mb-6">
@@ -90,49 +90,17 @@ export default function PartnerSection() {
           </div>
         </header>
 
-        {/* Asymmetric & Aesthetic Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-          {gridPartners.map((partner, idx) => (
-            <motion.div
+        {/* Partner Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 lg:gap-16">
+          {partners.map((partner, idx) => (
+            <PartnerCard
               key={idx}
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
-              whileHover={{ y: -10 }}
-              className={`group relative flex flex-col bg-white rounded-[32px] overflow-hidden border border-slate-100 transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] ${
-                idx === 1 || idx === 3 ? "md:mt-12" : "" // Alternating vertical offset
-              }`}
-            >
-              {/* Image Container */}
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={partner.image}
-                  alt={partner.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05183D]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Frosted Glass Tag */}
-                <span className="absolute top-6 right-6 bg-white/20 backdrop-blur-xl border border-white/30 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-2xl">
-                  {partner.tag}
-                </span>
-              </div>
-
-              {/* Text Content */}
-              <div className="p-10">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#05183D] mb-4 tracking-tight leading-tight">
-                  {partner.title}
-                </h3>
-                <p className="text-slate-500 text-[16px] leading-relaxed font-medium">
-                  {partner.description}
-                </p>
-
-                <div className="mt-8 flex items-center gap-2 text-sky-500 font-bold text-sm opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                  <span>Learn more</span>
-                  <span>→</span>
-                </div>
-              </div>
-            </motion.div>
+              title={partner.title}
+              description={partner.description}
+              image={partner.image}
+              tag={partner.tag}
+              delay={idx * 100}
+            />
           ))}
         </div>
       </div>

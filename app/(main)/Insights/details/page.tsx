@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import  { Suspense } from 'react'
 import InsightsDetails from './_components/InsightsDetails'
 // import InsightDetailsContent from './_components/InsightDetailsContent'
 

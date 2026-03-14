@@ -250,7 +250,6 @@ export default function InsightsPage() {
     </div>
   );
 }
-
 export const InsightCard = ({
   id,
   title,
@@ -265,13 +264,12 @@ export const InsightCard = ({
 
   return (
     <motion.div
-      onClick={() => router.push(`/Insights/details?id=${id}`)}
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4, delay: (index % 3) * 0.08 }}
       whileHover={{ y: -6 }}
-      className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 cursor-pointer group"
+      className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group flex flex-col"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
@@ -287,7 +285,7 @@ export const InsightCard = ({
           {tags?.map((tag: string) => (
             <span
               key={tag}
-              className="px-3 py-1 text-[11px] bg-white/90 backdrop-blur-sm rounded-md font-bold text-[#05183D]"
+              className="px-3 py-1 text-[11px] bg-white/90 backdrop-blur-sm rounded-md font-semibold text-[#05183D]"
             >
               {tag}
             </span>
@@ -295,8 +293,8 @@ export const InsightCard = ({
         </div>
       </div>
 
-      <div className="p-6 space-y-3">
-        <div className="text-xs text-slate-400 font-medium">
+      <div className="p-6 flex flex-col flex-1">
+        <div className="text-xs text-slate-400 font-medium mb-2">
           {publishDate} • {readTime}
         </div>
 
@@ -304,9 +302,17 @@ export const InsightCard = ({
           {title}
         </h3>
 
-        <p className="text-slate-500 text-sm leading-relaxed line-clamp-3">
+        <p className="text-slate-500 text-sm leading-relaxed line-clamp-3 mt-2">
           {summary}
         </p>
+
+        {/* Read More Button */}
+        <button
+          onClick={() => router.push(`/Insights/details?id=${id}`)}
+          className="mt-5 cursor-pointer w-fit text-sm font-semibold text-[#2F8BDD] border border-[#2F8BDD] px-4 py-2 rounded-lg hover:bg-[#2F8BDD] hover:text-white transition"
+        >
+          Read more
+        </button>
       </div>
     </motion.div>
   );
