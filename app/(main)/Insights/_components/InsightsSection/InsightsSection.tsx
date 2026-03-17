@@ -19,6 +19,7 @@ import in_hand_bit from "./imgs/in-hand-web3.webp";
 import monitoring from "./imgs/monitoring.webp";
 import stable_coin from "./imgs/stable-coin.avif";
 import web3ki from "./imgs/web-ki.png";
+import { FiDownload } from "react-icons/fi";
 
 const articles = [
   {
@@ -180,26 +181,53 @@ export default function InsightsPage() {
     <div className="bg-gradient-to-b from-[#EEF6FF] via-white to-white min-h-screen pt-40 py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-20"
-        >
-          <div className="flex items-center gap-2 text-[#2F8BDD] text-[11px] font-extrabold mb-4 tracking-widest">
-            <span className="w-2 h-2 rounded-full bg-[#2F8BDD]" />
-            MARKET NOTES • HIRING SIGNALS • REGULATION • EXECUTION
-          </div>
+        <div className="flex justify-between mr-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-20"
+          >
+            <div className="flex items-center gap-2 text-[#2F8BDD] text-[11px] font-extrabold mb-4 tracking-widest">
+              <span className="w-2 h-2 rounded-full bg-[#2F8BDD]" />
+              MARKET NOTES • HIRING SIGNALS • REGULATION • EXECUTION
+            </div>
 
-          <h1 className="text-[48px] md:text-[64px] font-bold text-[#05183D] mb-6 tracking-tight relative inline-block">
-            Insights
-            <span className="absolute -bottom-3 left-0 w-24 h-1 bg-[#2F8BDD] rounded" />
-          </h1>
+            <h1 className="text-[48px] md:text-[64px] font-bold text-[#05183D] mb-6 tracking-tight relative inline-block">
+              Insights
+              <span className="absolute -bottom-3 left-0 w-24 h-1 bg-[#2F8BDD] rounded" />
+            </h1>
 
-          <p className="max-w-2xl text-slate-500 text-lg leading-relaxed">
-            A single place for market updates across AI, blockchain, DeFi and
-            Web3 — plus the hiring signals that matter.
-          </p>
-        </motion.div>
+            <p className="max-w-2xl text-slate-500 text-lg leading-relaxed">
+              A single place for market updates across AI, blockchain, DeFi and
+              Web3 — plus the hiring signals that matter.
+            </p>
+          </motion.div>
+
+          <button
+            className="
+        relative flex items-center justify-center gap-2 cursor-pointer
+        h-12 w-36
+        rounded-2xl
+        font-semibold text-white text-lg
+        bg-gradient-to-r from-[#6FDEF7] to-[#2F8BDD]
+        overflow-hidden
+
+        transition-all duration-300 ease-in-out
+        hover:scale-105
+        hover:shadow-[0_0_25px_rgba(47,139,221,0.6)]
+        active:scale-95
+
+        before:absolute before:inset-0
+        before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent
+        before:translate-x-[-100%]
+        hover:before:translate-x-[100%]
+        before:transition-transform before:duration-700
+      "
+          >
+            <FiDownload className="text-xl transition-transform duration-300 group-hover:translate-y-1" />
+            <span>Download</span>
+          </button>
+        </div>
 
         {/* SEARCH */}
         <div className="space-y-10 mb-20">

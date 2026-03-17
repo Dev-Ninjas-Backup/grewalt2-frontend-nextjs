@@ -18,7 +18,7 @@ const TEAM_DATA = [
     name: "Terath Grewal",
     role: "Co-Founder / Managing Partner",
     image: img1,
-    imageClassName: "!scale-130 object-top",
+    imageClassName: "object-bottom",
   },
   {
     id: 2,
@@ -99,7 +99,8 @@ const TeamSection = () => {
               role={member.role}
               image={member.image}
               // imageClassName={member.imageClassName}
-              isCEO={member.name === "Terath Grewal"}
+              // isCEO={member.name === "Terath Grewal"}
+              
             />
           ))}
         </div>
