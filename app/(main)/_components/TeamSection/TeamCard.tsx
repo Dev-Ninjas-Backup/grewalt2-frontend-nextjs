@@ -17,7 +17,7 @@ const TeamCard = ({ name, role, image, index, isCEO }: TeamMemberProps) => {
       data-aos-delay={index * 120}
       className={`
         relative overflow-hidden group transition-transform duration-500
-        rounded-[18px]
+        rounded-[18px] 
         ${isCEO ? "shadow-[0_30px_60px_rgba(111,222,247,0.4)] scale-105 lg:scale-110 ring-4 ring-sky-400 z-10" : "shadow-md"}
         ${isCEO ? "lg:aspect-[5/6]" : "aspect-[4/5]"}
       `}
@@ -29,8 +29,8 @@ const TeamCard = ({ name, role, image, index, isCEO }: TeamMemberProps) => {
         fill
         className={`
           object-cover transition-transform duration-700
-          group-hover:scale-110
-          ${isCEO ? "brightness-105 contrast-105" : ""}
+        
+          ${(index === 1 || index === 3)? "scale-110" : ""}
         `}
       />
 
