@@ -202,30 +202,30 @@ export default function InsightsPage() {
               Web3 — plus the hiring signals that matter.
             </p>
           </motion.div>
-
           <button
             className="
-        relative flex items-center justify-center gap-2 cursor-pointer
-        h-12 w-36
-        rounded-2xl
-        font-semibold text-white text-lg
-        bg-gradient-to-r from-[#6FDEF7] to-[#2F8BDD]
-        overflow-hidden
+    relative flex items-center justify-center gap-2 cursor-pointer
+    h-12 px-6 w-fit /* 2. Logic: Fixed width bad diye content onujayi padding deya hoyeche */
+    rounded-2xl
+    font-semibold text-white text-lg
+    bg-gradient-to-r from-[#6FDEF7] to-[#2F8BDD]
+    overflow-hidden
+    whitespace-nowrap /* 3. Logic: Text wrap bondho korar jonno */
 
-        transition-all duration-300 ease-in-out
-        hover:scale-105
-        hover:shadow-[0_0_25px_rgba(47,139,221,0.6)]
-        active:scale-95
+    transition-all duration-300 ease-in-out
+    hover:scale-105
+    hover:shadow-[0_0_25px_rgba(47,139,221,0.6)]
+    active:scale-95
 
-        before:absolute before:inset-0
-        before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent
-        before:translate-x-[-100%]
-        hover:before:translate-x-[100%]
-        before:transition-transform before:duration-700
-      "
+    before:absolute before:inset-0
+    before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent
+    before:translate-x-[-100%]
+    hover:before:translate-x-[100%]
+    before:transition-transform before:duration-700
+  "
           >
             <FiDownload className="text-xl transition-transform duration-300 group-hover:translate-y-1" />
-            <span>Download</span>
+            <span>Download Our {new Date().getFullYear()} Whitepaper</span>
           </button>
         </div>
 
