@@ -119,7 +119,7 @@ const HomeBanner = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24 pointer-events-auto"
         >
           <motion.button
-            onClick={() => route.push("jobs")}
+            onClick={() => route.push("contact")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="group relative flex items-center gap-3 bg-gradient-to-r from-[#2F8BDD] to-[#6FDEF7] text-white px-10 py-5 rounded-2xl font-bold shadow-[0_15px_30px_-5px_rgba(47,139,221,0.4)] cursor-pointer overflow-hidden transition-all duration-300"
@@ -135,7 +135,7 @@ const HomeBanner = () => {
             <span className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
           </motion.button>
           <button
-            onClick={() => route.push("Insights")}
+            onClick={() => route.push("jobs")}
             className="px-12 py-5 rounded-2xl border-2 border-slate-100 text-[#2F8BDD] font-bold hover:bg-white hover:border-[#2F8BDD]/20 transition-all duration-300 bg-white/30 backdrop-blur-md cursor-pointer"
           >
             Explore Opportunities

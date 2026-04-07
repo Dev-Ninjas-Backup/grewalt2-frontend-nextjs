@@ -11,6 +11,7 @@ import img1 from "@/public/newImg/img2.jpg";
 import img3 from "@/public/newImg/img3.jpg";
 import img2 from "@/public/newImg/img4.jpg";
 import bgImg from "@/public/teamSection/Svg file 2.svg";
+import { useRouter } from "next/navigation";
 
 const TEAM_DATA = [
   {
@@ -41,6 +42,8 @@ const TEAM_DATA = [
 ];
 
 const TeamSection = () => {
+  
+const routes = useRouter();
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -82,7 +85,7 @@ const TeamSection = () => {
               and decentralized innovation.
             </p>
 
-            <button className="border border-[#6FDEF7]/30 cursor-pointer text-white px-8 py-3 rounded-xl hover:bg-[#6FDEF7] hover:text-[#05183D] transition-all duration-300 font-bold shadow-lg hover:shadow-[#6FDEF7]/20">
+            <button onClick={() => routes.push(`contact`)} className="border border-[#6FDEF7]/30 cursor-pointer text-white px-8 py-3 rounded-xl hover:bg-[#6FDEF7] hover:text-[#05183D] transition-all duration-300 font-bold shadow-lg hover:shadow-[#6FDEF7]/20">
               Let&apos;s Collaborate
             </button>
           </div>

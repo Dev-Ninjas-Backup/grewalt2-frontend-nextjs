@@ -9,6 +9,11 @@ import "aos/dist/aos.css";
 import logo from "@/public/images/logof.png";
 import bgShape from "@/public/teamSection/Svg file 2.svg";
 
+type FooterLink = {
+  name: string;
+  href: string;
+};
+
 const Footer = () => {
   useEffect(() => {
     AOS.init({
@@ -18,14 +23,24 @@ const Footer = () => {
     });
   }, []);
 
-  const footerLinks = {
-    Company: ["About", "Services", "Industries", "Team", "Contact"],
-    Services: ["Executive Search", "Technical Recruitment", "Talent Advisory"],
+  const footerLinks: Record<string, FooterLink[]> = {
+    Company: [
+      { name: "About", href: "/" },
+      { name: "Services", href: "/services" },
+      { name: "Industries", href: "/services" },
+      { name: "Team", href: "/" },
+      { name: "Contact", href: "/contact" },
+    ],
+    Services: [
+      { name: "Executive Search", href: "/services" },
+      { name: "Technical Recruitment", href: "/services" },
+      { name: "Talent Advisory", href: "/services" },
+    ],
     Industries: [
-      "AI & Machine Learning",
-      "Blockchain",
-      "Web3 & DeFi",
-      "Crypto",
+      { name: "AI & Machine Learning", href: "/services" },
+      { name: "Blockchain", href: "/services" },
+      { name: "Web3 & DeFi", href: "/services" },
+      { name: "Crypto", href: "/services" },
     ],
   };
 
@@ -52,12 +67,12 @@ const Footer = () => {
               </h3>
               <ul className="space-y-5">
                 {links.map((link) => (
-                  <li key={link}>
+                  <li key={link.name}>
                     <Link
-                      href={`/${link.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}`}
+                      href={link.href}
                       className="text-slate-300 hover:text-[#6FDEF7] transition-all duration-300 text-[16px] font-normal"
                     >
-                      {link}
+                      {link.name}
                     </Link>
                   </li>
                 ))}
@@ -70,10 +85,7 @@ const Footer = () => {
         <div className="w-full h-[1px] bg-slate-100/10 mb-12" />
 
         {/* Bottom Bar: Logo, Copyright, Policies */}
-        <div
-          className="flex flex-col md:flex-row justify-between items-center gap-10"
-         
-        >
+        <div className="flex flex-col md:flex-row justify-between items-center gap-10">
           {/* Your Provided Logo */}
           <div className="flex-shrink-0">
             <Image
