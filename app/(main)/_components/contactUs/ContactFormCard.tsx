@@ -54,9 +54,9 @@ const ContactFormCard = () => {
       setService("");
       setTimeline("");
     } catch {
-      // toast.error("Failed to send message. Please try again.", {
-      //   position: "top-right",
-      // });
+      toast.error("Failed to send message. Please try again.", {
+        position: "top-right",
+      });
     } finally {
       setLoading(false);
     }
