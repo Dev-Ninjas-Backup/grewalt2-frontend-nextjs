@@ -25,14 +25,14 @@ jobs:
 
       # Docker build
       - name: Build Docker Image
-        run: docker build -t nextjs-app .
+        run: docker build -t grewalt2 .
 
       # Example: push to Docker Hub
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Tag Image
-        run: docker tag nextjs-app ${{ secrets.DOCKER_USERNAME }}/nextjs-app:latest
+        run: docker tag grewalt2 ${{ secrets.DOCKER_USERNAME }}/grewalt2:latest
 
       - name: Push Image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/nextjs-app:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/grewalt2:latest
