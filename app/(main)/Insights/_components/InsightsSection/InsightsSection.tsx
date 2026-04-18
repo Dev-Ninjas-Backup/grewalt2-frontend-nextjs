@@ -159,6 +159,16 @@ const articles = [
 const CATEGORIES = ["All", "Market", "Hiring", "Regulation", "AI", "Web3"];
 
 export default function InsightsPage() {
+
+const handleDownload = () => {
+  const link = document.createElement("a");
+  link.href = "/whitepaper.pdf"; // correct path
+  link.download = "Aventra3-Whitepaper-2026.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -202,7 +212,9 @@ export default function InsightsPage() {
               Web3 — plus the hiring signals that matter.
             </p>
           </motion.div>
-          <button
+          <a
+            href="/whitepaper.pdf"
+            download
             className="
     relative flex items-center justify-center gap-2 cursor-pointer
     h-12 px-6 w-fit /* 2. Logic: Fixed width bad diye content onujayi padding deya hoyeche */
@@ -226,7 +238,7 @@ export default function InsightsPage() {
           >
             <FiDownload className="text-xl transition-transform duration-300 group-hover:translate-y-1" />
             <span>Download Our {new Date().getFullYear()} Whitepaper</span>
-          </button>
+          </a>
         </div>
 
         {/* SEARCH */}
