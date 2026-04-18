@@ -112,7 +112,7 @@ const ContactPage = () => {
                 />
               </a>
               <a
-                href="https://www.instagram.com/aventra3.ai/"
+                href="https://www.instagram.com/aventra3_/"
                 className="hover:scale-110 hover:-translate-y-1 transition-all duration-300"
               >
                 <Image

@@ -10,6 +10,8 @@ import blogImg3 from "@/public/insight/btc.png";
 import bgShape from "@/public/teamSection/Svg file 2.svg";
 
 import { InsightCard } from "../../Insights/_components/InsightsSection/InsightsSection";
+import { useRouter } from "next/navigation";
+
 
 const INSIGHTS_DATA = [
   {
@@ -45,6 +47,7 @@ const INSIGHTS_DATA = [
 ];
 
 const InsightSection = () => {
+  const navigate  = useRouter()
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -86,7 +89,10 @@ const InsightSection = () => {
               regulatory shifts, and operational strategies shaping the future.
             </p>
 
-            <button className="border cursor-pointer border-[#6FDEF7]/40 text-white px-10 py-3.5 rounded-xl hover:bg-[#6FDEF7] hover:text-[#05183D] transition-all duration-300 font-bold text-[15px]">
+            <button
+              onClick={() => navigate.push("/Insights")}
+              className="border cursor-pointer border-[#6FDEF7]/40 text-white px-10 py-3.5 rounded-xl hover:bg-[#6FDEF7] hover:text-[#05183D] transition-all duration-300 font-bold text-[15px]"
+            >
               Explore Now
             </button>
           </div>

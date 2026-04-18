@@ -86,23 +86,57 @@ const Footer = () => {
 
         {/* Bottom Bar: Logo, Copyright, Policies */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-          {/* Your Provided Logo */}
+          {/* Logo */}
           <div className="flex-shrink-0">
-            <Image
-              src={logo}
-              alt="Aventra3 Logo"
-              width={160}
-              height={45}
-              className=""
-            />
+            <Image src={logo} alt="Aventra3 Logo" width={160} height={45} />
           </div>
 
-          {/* Copyright Text */}
+          {/* Social Links (NEW ADD) */}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.linkedin.com/company/aventra3/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 hover:-translate-y-1 transition-all duration-300"
+            >
+              <Image
+                src="/image/linkedin.svg"
+                alt="LinkedIn"
+                width={32}
+                height={32}
+              />
+            </a>
+
+            <a
+              href="https://x.com/aventra3_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 hover:-translate-y-1 transition-all duration-300"
+            >
+              <Image src="/image/x.svg" alt="X" width={32} height={32} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/aventra3_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 hover:-translate-y-1 transition-all duration-300"
+            >
+              <Image
+                src="/image/instagram.svg"
+                alt="Instagram"
+                width={32}
+                height={32}
+              />
+            </a>
+          </div>
+
+          {/* Copyright */}
           <p className="text-slate-400 text-[15px] font-light">
             © 2025 Aventra3. All rights reserved.
           </p>
 
-          {/* Policy Links */}
+          {/* Policies */}
           <div className="flex items-center gap-10">
             <Link
               href="/privacy-policy"
