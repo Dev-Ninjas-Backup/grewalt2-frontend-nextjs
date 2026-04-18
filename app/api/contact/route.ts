@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
 
 export async function POST(req: Request) {
   try {
@@ -11,11 +12,10 @@ export async function POST(req: Request) {
       port: Number(process.env.EMAIL_SMTP_PORT),
       secure: true,
       auth: {
-        type: "LOGIN",
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-    });
+    } as SMTPTransport.Options);
 
     // HTML Email Template updated for the new fields
     const htmlTemplate = `
