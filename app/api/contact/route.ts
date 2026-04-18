@@ -11,6 +11,7 @@ export async function POST(req: Request) {
       port: Number(process.env.EMAIL_SMTP_PORT),
       secure: true,
       auth: {
+        type: "LOGIN",
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
