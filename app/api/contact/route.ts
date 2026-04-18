@@ -70,7 +70,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: `"Aventra3 Lead System" <${process.env.EMAIL_USER}>`,
-      to: "hello@aventura3.com",
+      to: "info@aventura3.com",
       replyTo: email,
       subject: `🚀 [New Lead] ${name} | ${service} | ${timeline}`,
       html: htmlTemplate,
