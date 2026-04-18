@@ -84,7 +84,7 @@ const SolutionCard = ({
 
       {/* CTA Button */}
       <button
-        onClick={() => route.push("jobs")}
+        onClick={() => route.push(`${index === 0 ? "/jobs" : index ===  1? "contact" : "clients"}`)}
         className="w-fit flex items-center gap-2 cursor-pointer px-6 py-3.5 rounded-lg border border-[#2F8BDD]/20 text-[#2F8BDD] font-bold bg-[#F0F9FF] hover:bg-[#2F8BDD] hover:text-white transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[#2F8BDD]/20"
       >
         {btnText}

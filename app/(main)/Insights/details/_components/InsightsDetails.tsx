@@ -2,10 +2,10 @@
 "use client";
 
 import React, { useMemo } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import bgImage from "@/public/contact/bgOne.png";
-import insightFeatureImg from "@/public/newImg/insight/insDetl.png";
+// import bgImage from "@/public/contact/bgOne.png";
+// import insightFeatureImg from "@/public/newImg/insight/insDetl.png";
 import { INSIGHTS_DATA } from "./data";
 
 const InsightsDetails = () => {
@@ -18,36 +18,38 @@ const InsightsDetails = () => {
     );
   }, [id]);
 
-  const bgStyle = {
-    backgroundImage: `url(${bgImage.src})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  };
+  // const bgStyle = {
+  //   backgroundImage: `url(${bgImage.src})`,
+  //   backgroundSize: "cover",
+  //   backgroundPosition: "center",
+  // };
+
+  // bg-gradient-to-b from-[#021335] via-[#021335]/60
 
   if (!article) return null;
 
   return (
-    <main className="w-full bg-white flex flex-col">
+    <main className="w-full mt-33  flex flex-col">
       {/* HERO HEADER */}
       <section
-        className="relative w-full pt-48 pb-72 px-6 overflow-hidden"
-        style={bgStyle}
+        className="relative w-full px-6 overflow-hidden"
+        // style={bgStyle}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#021335] via-[#021335]/60 to-white z-0" />
+        <div className="absolute inset-0  z-0" />
       </section>
 
       {/* FEATURE IMAGE */}
-      <section className="relative w-full px-6 pb-12 -mt-56 z-20 flex justify-center">
+      {/* <section className="relative w-full px-6 pb-12 -mt-56 z-20 flex justify-center">
         <div className="max-w-7xl w-full">
           <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.25)]">
             <Image
               src={insightFeatureImg}
               alt={article.title}
-              className="object-cover w-full h-[42vh] md:h-[65vh]"
+              className="object-cover w-full h-[42vh] md:h-[35vh]"
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CONTENT */}
       <InsightDetailsContent article={article} />
@@ -57,7 +59,7 @@ const InsightsDetails = () => {
 
 const InsightDetailsContent = ({ article }: { article: any }) => {
   return (
-    <section className="w-full bg-white font-sans">
+    <section className="w-full font-sans">
       <div className="max-w-5xl mx-auto px-6 pb-28">
         {/* META */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-10">

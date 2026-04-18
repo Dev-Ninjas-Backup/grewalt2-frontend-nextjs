@@ -115,7 +115,7 @@ export default function ServicesPage() {
         <section className="mb-20 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
             {services.map((service, idx) => (
-              <ServiceCard key={idx} {...service} delay={0.1 * idx} />
+              <ServiceCard key={idx} {...service} delay={0.1 * idx} index={idx}/>
             ))}
           </div>
         </section>

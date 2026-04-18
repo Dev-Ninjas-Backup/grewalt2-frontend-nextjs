@@ -10,6 +10,7 @@ interface ServiceCardProps {
   features: string[];
   buttonText: string;
   delay: number;
+  index: number
 }
 
 export const ServiceCard = ({
@@ -18,8 +19,9 @@ export const ServiceCard = ({
   features,
   buttonText,
   delay,
+  index,
 }: ServiceCardProps) => {
-  const route = useRouter()
+  const route = useRouter();
   // Container for the list to control the staggering of children
   const listContainerVariants = {
     hidden: { opacity: 0 },
@@ -80,7 +82,7 @@ export const ServiceCard = ({
       </motion.ul>
 
       <button
-        onClick={() => route.push("jobs")}
+        onClick={() => route.push(`${index === 0 ? "contact" : index === 1 ? "contact" : "clients"}`)}
         className="inline-flex cursor-pointer items-center justify-center gap-2 w-fit px-8 py-3 border border-[#CBD5E1] rounded-lg text-[#3B82F6] font-semibold text-[15px] hover:bg-slate-50 transition-all active:scale-95 group"
       >
         {buttonText}
